@@ -6,11 +6,10 @@
 
 <body>
 
-
 <?php
 /*   Integer     
 
-    #convert tupes
+    #convert types
 $x = (int) true; // = 1 
 echo $x . '<br />';
 
@@ -51,11 +50,8 @@ var_dump($z);
 
 $intVar = 5;
 var_dump((float)$intVar);
-
-
 ?>
 
 </body>
-
 </html>
 
