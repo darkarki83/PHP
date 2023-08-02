@@ -5,12 +5,9 @@
 </head>
 
 <body>
-
-
 <?php
 
 $isComplete = false;
-
 // integer 0, -0 = false
 // float 0.0, -0.0 = false
 // '' = false
@@ -20,7 +17,6 @@ $isComplete = false;
 
 var_dump(is_bool($isComplete));
 
-
 if($isComplete) {
     var_dump($isComplete);
     
@@ -29,7 +25,5 @@ if($isComplete) {
 }
 
 ?>
-
 </body>
-
 </html>
