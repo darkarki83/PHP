@@ -1,56 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Integer</title>
-</head>
-
-<body>
-
 <?php
 
-declare(ticks=1);
+// Functions lesson 2
 
-// A function called on each tick event
-function tick_handler()
-{
-    echo "tick_handler() called\n <br />";
+declare(strict_types=1);
+
+/*function sum(int $x, int $y) {
+    return $x * $y;
 }
 
-register_tick_function('tick_handler'); // causes a tick event
+echo sum('10', 7);*/
 
-$a = 1; // causes a tick event
+//default parameters
 
-if ($a > 0) {
-    echo $a += 2; // causes a tick event\
+function greet($name = "Guest") {
+    echo "Hello, $name!";
 }
 
-?>
-</body>
+greet(); // Output: Hello, Guest!
+greet("Alice"); // Output: Hello, Alice!
 
-</html>
-
-<?php
-/*
- declare(strict_types=1); ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Integer</title>
-</head>
-
-<body>
-
-<?php
-function sum(int $a, int $b) {
-    return $a + $b;
+function sum(...$numbers) {
+    return array_sum($numbers);
 }
 
-var_dump(sum(1, 2));
-var_dump(sum('1.5', 2.5));
-?>
-</body>
+echo sum(111, 2, 3, 5, 10). '<br />';
 
-</html>
-*/
 ?>
