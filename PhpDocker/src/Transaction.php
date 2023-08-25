@@ -2,34 +2,21 @@
 
 class Transaction
 {
+    private float $amount;
+    private ?Customer $customer = null;
 
-    private ?float $amount = null;
-    private string $description;
-
-    public function __construct(float $amount, string $description) {
+    public function __construct(float $amount)
+    {
         $this->amount = $amount;
-        $this->description = $description;
     }
 
-    public function addTex(float $rate): Transaction {
-        $this->amount += $this->amount * $rate / 100;
-
-        return $this;
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
     }
 
-    public function applyDiscount(float $rate) :Transaction {
-        $this->amount -= $this->amount * $rate / 100;
-
-        return $this;
+    public function setCustomer(Customer $customer): void
+    {
+        $this->customer = $customer;
     }
-
-    public function getAmount(){
-        return $this->amount;
-    }
-
-    public function __destruct() {
-        echo 'Destruct'. $this->description . '<br/>' ;
-    }
-
-
 }
