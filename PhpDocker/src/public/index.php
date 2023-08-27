@@ -2,27 +2,18 @@
 
 declare(strict_types=1);
 
-require_once '../Transaction.php';
-require_once '../Customer.php';
-require_once '../PaymentProfile.php';
+spl_autoload_register(function ($class) {
+    $path = __DIR__ . '/../' . lcfirst(str_replace('\\', '/', $class)) . '.php';
 
-// Create a new instance of Transaction
-$transaction1 = new Transaction(100);
+    if (file_exists($path)) {
+        require $path;
+    }   
+});
 
-// Create a new instance of Customer
-$customer = new Customer();
+use App\PaymentGateway\Paddle\{Transaction, CustomerProfile};
 
-// Set the customer for the transaction
-$transaction1->setCustomer($customer);
+$transaction = new Transaction(100);
 
-// Create a new PaymentProfile instance
-$paymentProfile = new PaymentProfile('1245');
-
-// Set the payment profile for the customer
-$customer->setPaymentProfile($paymentProfile);
-
-// Access the ID of the payment profile
-echo $transaction1->getCustomer()?->getPaymentProfile()->id; // Output: 12345
-
+var_dump($transaction);
 
 ?>
